@@ -5,7 +5,7 @@ import PackageDescription
 let package = Package(
     name: "nepali-date-picker",
     platforms: [
-        .iOS(.v13),
+        .iOS(.v14),
     ],
     products: [
         .library(name: "nepali-date-picker", targets: ["nepali-date-picker"])
@@ -13,8 +13,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "nepali-date-picker",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker/releases/download/2.2.3/nepali_date_picker.xcframework.zip",
-            checksum: "a5c37e8f4a7d39c279183a4271caf6e9cf09474ec6001507bc0418e5de71bb68"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker/releases/download/2.2.4/nepali_date_picker.xcframework.zip",
+            checksum: "5c4d1dd1e55b82afe063594eb4ef7a7448fe041611317160cdbaa9285ecde41a"
         )
     ]
 )
