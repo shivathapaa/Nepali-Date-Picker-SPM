@@ -13,8 +13,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "nepali-date-picker",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker/releases/download/2.3.1/nepali_date_picker.xcframework.zip",
-            checksum: "a7808195dc70ada31e65b1d40d65b017a21d30d0a6c60f74fac833cd4e5b7fe6"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker/releases/download/2.3.2/nepali_date_picker.xcframework.zip",
+            checksum: "afaa0881cd1a0cd884aa8df08952bd18c2d89be0085a060db5fb8e09f2ed7742"
         )
     ]
 )
