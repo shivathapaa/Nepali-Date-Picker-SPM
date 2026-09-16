@@ -109,10 +109,14 @@ for the wrapper, the sizing rules and every variant.
 - [Main repository](https://github.com/shivathapaa/Nepali-Date-Picker)
 - [API reference](https://shivathapaa.github.io/Nepali-Date-Picker/api/)
 - [Sample Swift iOS Project](https://github.com/shivathapaa/Nepali-Date-Picker/tree/main/sample/iosSwiftApp)
-- Other platforms: [`nepali_calendar_utils`](https://github.com/shivathapaa/nepali_calendar_utils) on
-  PyPI, [`@nepali-date-picker/core`](https://www.npmjs.com/package/@nepali-date-picker/core) and
-  [`@nepali-date-picker/web-component`](https://www.npmjs.com/package/@nepali-date-picker/web-component)
-  on npm. All share the same calendar tables, so results match.
+- Other platforms, all sharing the same calendar tables, so results match:
+    - **Kotlin / Android / KMP** - [main README](https://github.com/shivathapaa/Nepali-Date-Picker/blob/main/README.md),
+      on [Maven Central](https://central.sonatype.com/namespace/io.github.shivathapaa)
+    - **JavaScript / web** - [README-js.md](https://github.com/shivathapaa/Nepali-Date-Picker/blob/main/README-js.md),
+      [`@nepali-date-picker/web-component`](https://www.npmjs.com/package/@nepali-date-picker/web-component)
+      and [`@nepali-date-picker/core`](https://www.npmjs.com/package/@nepali-date-picker/core) on npm
+    - **Python / backend** - [`nepali_calendar_utils`](https://github.com/shivathapaa/nepali_calendar_utils)
+      on PyPI
 
 ## License
 
