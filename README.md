@@ -6,7 +6,8 @@
 
 The Swift Package Manager distribution of the
 [Nepali Date Picker](https://github.com/shivathapaa/Nepali-Date-Picker): a **Bikram Sambat (Nepali)
-date picker** for iOS, plus a headless **BS ↔ AD conversion, comparison and formatting engine**.
+date picker** for iOS, plus a headless **BS ↔ AD conversion, comparison and formatting engine** for
+iOS and macOS.
 
 <p align="center">
   <a href="https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases">
@@ -29,19 +30,26 @@ date picker** for iOS, plus a headless **BS ↔ AD conversion, comparison and fo
 ## Requirements
 
 iOS 14+, Swift tools 5.5+, **arm64 only** (device and Apple silicon simulator; there is no `x86_64`
-slice). Supported range: BS **1970–2100**, AD **1913–2043**.
+slice). The engine product also runs on **macOS 12+** (Apple silicon). Supported range: BS
+**1970–2100**, AD **1913–2043**.
 
 ## Which product to pick
 
 **Depend on exactly one.**
 
-| Product | Contains | Swift import | Download |
-| --- | --- | --- | --- |
-| `nepali-date-picker` | The Compose pickers **plus** the full conversion engine | `nepali_date_picker` | ~60 MB |
-| `nepali-date-picker-core` | The conversion engine only, no UI | `nepali_date_picker_core` | ~4 MB |
+| Product | Contains | Platforms | Swift import | Download |
+| --- | --- | --- | --- | --- |
+| `nepali-date-picker` | The Compose pickers **plus** the full conversion engine | iOS 14+ | `nepali_date_picker` | ~60 MB |
+| `nepali-date-picker-core` | The conversion engine only, no UI | iOS 14+, macOS 12+ | `nepali_date_picker_core` | ~4 MB |
 
 > **Never add both.** Each XCFramework is a self-contained static binary and the UI framework already
 > embeds the core module, so linking both duplicates the Kotlin runtime and every core symbol.
+
+> **macOS gets the engine, not the pickers.** `nepali-date-picker-core` carries a `macos-arm64`
+> slice, so a Mac app has the full conversion, comparison and formatting API. The pickers stay
+> iOS-only: they are hosted in a `UIViewController`, and Compose Multiplatform publishes no
+> embeddable AppKit host. A macOS target that links `nepali-date-picker` fails to build with
+> `no library for this platform was found`; depend on `nepali-date-picker-core` there instead.
 
 ## Installation
 
@@ -56,11 +64,13 @@ Or in your own `Package.swift`:
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM.git", from: "3.1.1")
+    .package(url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM.git", from: "3.1.2")
 ],
 targets: [
     .target(name: "App", dependencies: [
         .product(name: "nepali-date-picker", package: "Nepali-Date-Picker-SPM")
+        // macOS target: the engine product is the one that links
+        // .product(name: "nepali-date-picker-core", package: "Nepali-Date-Picker-SPM")
     ])
 ]
 ```
