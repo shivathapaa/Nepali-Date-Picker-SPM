@@ -2,15 +2,18 @@
 
 import PackageDescription
 
-// Two products, deliberately mutually exclusive. The UI framework
-// statically embeds the core module, so depending on both would link
-// the Kotlin runtime and every core symbol twice. Pick
-// "nepali-date-picker" for the Compose pickers plus the conversion
-// engine, or "nepali-date-picker-core" for the conversion engine alone.
+// Two mutually exclusive products: the UI framework embeds core, so linking both
+// duplicates the Kotlin runtime and core symbols. Use "nepali-date-picker" for UI +
+// conversion, or "nepali-date-picker-core" for conversion only.
+//
+// "nepali-date-picker-core" supports arm64 macOS; the UI product is iOS-only because
+// Compose Multiplatform has no embeddable AppKit host. macOS 12 is the macosArm64
+// minimum; Intel Macs are unsupported.
 let package = Package(
     name: "nepali-date-picker",
     platforms: [
         .iOS(.v14),
+        .macOS(.v12),
     ],
     products: [
         .library(name: "nepali-date-picker", targets: ["nepali-date-picker"]),
@@ -19,13 +22,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "nepali-date-picker",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.1/nepali_date_picker.xcframework.zip",
-            checksum: "768667146ec86a5f06c1527ecbe75d8b158b3be1420af0d097e781ab4058c892"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.2/nepali_date_picker.xcframework.zip",
+            checksum: "96a8e08d35bd52e7f8ac397048178fc9a4d94ccbee2adf502ca291f1457505cc"
         ),
         .binaryTarget(
             name: "nepali-date-picker-core",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.1/nepali_date_picker_core.xcframework.zip",
-            checksum: "86ce20004fa750cdb592655d8b70903074bb0f0464acf86bcb31cfcc62e9901a"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.2/nepali_date_picker_core.xcframework.zip",
+            checksum: "4c635d0f8c2f21419a5c6ff126b094eba1ba31093696bfb066ccaf5f795202c4"
         )
     ]
 )
