@@ -22,13 +22,13 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "nepali-date-picker",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.2/nepali_date_picker.xcframework.zip",
-            checksum: "96a8e08d35bd52e7f8ac397048178fc9a4d94ccbee2adf502ca291f1457505cc"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.2.0/nepali_date_picker.xcframework.zip",
+            checksum: "7cea52c06ba8b9d694e5aeda08d04501da830e226121aba1f4fb11c976339462"
         ),
         .binaryTarget(
             name: "nepali-date-picker-core",
-            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.1.2/nepali_date_picker_core.xcframework.zip",
-            checksum: "4c635d0f8c2f21419a5c6ff126b094eba1ba31093696bfb066ccaf5f795202c4"
+            url: "https://github.com/shivathapaa/Nepali-Date-Picker-SPM/releases/download/3.2.0/nepali_date_picker_core.xcframework.zip",
+            checksum: "4b050493b7e3bb790d02b6269fbf49140c239c05cc77717f3899adab41add3df"
         )
     ]
 )
