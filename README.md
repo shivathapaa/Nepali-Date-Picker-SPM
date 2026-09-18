@@ -113,6 +113,10 @@ See
 [The pickers](https://github.com/shivathapaa/Nepali-Date-Picker/blob/main/README-spm.md#part-1---the-pickers)
 for the wrapper, the sizing rules and every variant.
 
+Every calendar picker can display the Gregorian calendar instead, with a `B.S.` / `A.D.` switch the
+user can flip, and can fill the grid's empty cells with the neighbouring months' days. The date handed
+back to Swift is always Bikram Sambat, so switching keeps the same day selected.
+
 ## Links
 
 - **[Full documentation](https://github.com/shivathapaa/Nepali-Date-Picker/blob/main/README-spm.md)**
